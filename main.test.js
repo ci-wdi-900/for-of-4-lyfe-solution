@@ -123,14 +123,6 @@ if (typeof addNoises === 'undefined') {
   addNoises = undefined;
 }
 
-if (typeof removeTrolls === 'undefined') {
-  removeTrolls = undefined;
-}
-
-if (typeof onlyDoggos === 'undefined') {
-  onlyDoggos = undefined;
-}
-
 
 describe('addAll', () => {
   it(`adds all the numbers in the array`, () => {

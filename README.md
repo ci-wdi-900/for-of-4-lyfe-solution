@@ -40,8 +40,8 @@ That one got away from me. Sorry.
 ##### Maps
 
 * `cubeAll` - given an array of numbers, returns an array where each number has been cubed (a.k.a. raised to the third power).
-* `makeFriendly` - given an array of paragraphs, returns an array where, for each paragraph, every second sentence ends with an exclamation point instead of the punctuation mark it held before.
 * `addNoises` - given an array of strings, returns an array where each string has appended to it that animal's noise. See tests for examples!
+* `makeFriendly` - given an array of paragraphs, returns an array where, for each paragraph, every second sentence ends with an exclamation point instead of the punctuation mark it held before.
 
 
 ##### Filters

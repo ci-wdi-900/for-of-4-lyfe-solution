@@ -47,4 +47,4 @@ That one got away from me. Sorry.
 ##### Filters
 
 * `removeTrolls` - given an array of strings, returns an array where any string in the original that was exclusively in upper case has been removed.
-* `onlyDoggos` - given an array of strings, returns an array where any string in the original that didn't represent a dog's name has been removed (same rules as `addNoises, see examples from either).
+* `onlyDoggos` - given an array of strings, returns an array where any string in the original that didn't represent a dog's name has been removed (same rules as `addNoises`, see examples from either).

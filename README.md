@@ -2,9 +2,15 @@
 
 ### Introduction
 
-This will be an exercise in using function expressions and `for of` loops. Most times you iterate through an array, you don't need the index you're currently on--and that's true of each of the challenges below.
+This will be an exercise in using function expressions and `for of` loops.
 
-Now, you COULD use a standard `for` loop... but who has time for that!
+Most times you iterate through an array, you don't need the index you're currently on, so `for of` loops are the simpler and nicer-looking choice.
+
+And every function should be declared with a function expression, because it prevents our functions being reassignable, preventing many a potential bug.
+
+Together, they make a dynamic duo serving up simpler and safer syntax for solution-slingers!
+
+That one got away from me. Sorry!
 
 
 ### Setup

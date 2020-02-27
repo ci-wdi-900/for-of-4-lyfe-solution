@@ -12,7 +12,17 @@ const addAll = function(nums) {
   return result;
 };
 
+const countSpaces = function(sentence) {
+  let count = 0;
 
+  for (const char of sentence) {
+    if (char === ' ') {
+      count++;
+    }
+  }
+
+  return count;
+}
 
 
 /*********************************
@@ -78,5 +88,37 @@ describe('addAll', () => {
 
   it(`isn't reassignable`, () => {
     expect(() => addAll = 500).toThrow();
+  })
+})
+
+describe(`countSpaces`, () => {
+  it(`counts all the spaces in a multi-space string`, () => {
+    const sentence1 = 'well hello there my crumpet';
+    const sentence2 = 'strings 4 eva';
+
+    expect(countSpaces(sentence1)).toBe(4);
+    expect(countSpaces(sentence2)).toBe(2);
+  })
+
+  it(`correctly identifies strings with no spaces`, () => {
+    const sentence1 = 'supercalifragilisticexpialidocious';
+    const sentence2 = 'antidisestablishmentarianism';
+    const sentence3 = 'pneunultramicroscopicsilicovulcanoconiosis';
+
+    expect(countSpaces(sentence1)).toBe(0);
+    expect(countSpaces(sentence2)).toBe(0);
+    expect(countSpaces(sentence3)).toBe(0);
+  })
+
+  it(`doesn't count all non-letters as spaces`, () => {
+    const sentence1 = 'how now, brown cow';
+    const sentence2 = '@(*@ are you even talking about?';
+
+    expect(countSpaces(sentence1)).toBe(3);
+    expect(countSpaces(sentence2)).toBe(5);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => countSpaces = 500).toThrow();
   })
 })

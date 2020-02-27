@@ -1,5 +1,12 @@
 const {
-  exampleFunction,
+  addAll,
+  countSpaces,
+  countTrues,
+  cubeAll,
+  makeFriendly,
+  addNoises,
+  removeTrolls,
+  onlyDoggos,
 } = require('./main.js')
 
 describe('exampleFunction', () => {

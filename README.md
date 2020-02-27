@@ -12,8 +12,8 @@ Now, you COULD use a standard `for` loop... but who has time for that!
 1. Fork and clone.
 2. Navigate into the directory.
 3. `npm install` and `npm test`.
-4. Code away in `main.js`.
-5. Read the `main.test.js` for function usage examples!
+4. Code away in `main.test.js`, NOT `main.js`. (There isn't one for annoying technical test-related reasons.)
+5. Read the tests further down in `main.test.js` for function usage examples!
 
 
 ### Guidelines

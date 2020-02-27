@@ -61,7 +61,37 @@ const cubeAll = function(nums) {
   return cubes;
 }
 
+const addNoises = function(animals) {
+  const animalsWithNoises = [];
 
+  const dogs = [
+    'Fido',
+    'Rolph',
+    'Maisie',
+  ];
+
+  const cats = [
+    'Garfield',
+    'Heathcliff',
+  ]
+
+  const dinos = [
+    'Barnie',
+    'Sharp Tooth',
+  ]
+
+  for (const animal of animals) {
+    if (dogs.includes(animal)) {
+      animalsWithNoises.push(`${animal} says "Woof!"`);
+    } else if (cats.includes(animal)) {
+      animalsWithNoises.push(`${animal} says "Meow!"`);
+    } else if (dinos.includes(animal)) {
+      animalsWithNoises.push(`${animal} says "ROWR."`);
+    }
+  }
+
+  return animalsWithNoises;
+}
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
@@ -222,5 +252,33 @@ describe('cubeAll', () => {
 
     expect(cubeAll(nums1)).toEqual(cubes1);
     expect(cubeAll(nums2)).toEqual(cubes2);
+  })
+})
+
+describe('addNoises', () => {
+    it('adds the appropriate noises for each animal in the given array', () => {
+    const dogs = [
+      'Fido',
+      'Rolph',
+      'Maisie',
+    ];
+
+    const cats = [
+      'Garfield',
+      'Heathcliff',
+    ]
+
+    const dinos = [
+      'Barnie',
+      'Sharp Tooth',
+    ]
+
+    const animals1 = ['Fido', 'Garfield', 'Sharp Tooth'];
+    const withNoises1 = ['Fido says "Woof!"', 'Garfield says "Meow!"', 'Sharp Tooth says "ROWR."'];
+    const animals2 = ['Rolph', 'Maisie', 'Barnie', 'Heathcliff'];
+    const withNoises2 = ['Rolph says "Woof!"', 'Maisie says "Woof!"', 'Barnie says "ROWR."', 'Heathcliff says "Meow!"'];
+
+    expect(addNoises(animals1)).toEqual(withNoises1);
+    expect(addNoises(animals2)).toEqual(withNoises2);
   })
 })

@@ -10,7 +10,7 @@ And every function should be declared with a function expression, because it kee
 
 Together, they make a dynamic duo, serving up simpler and safer syntax for solution-slingers!
 
-That one got away from me. Sorry!
+That one got away from me. Sorry.
 
 
 ### Setup

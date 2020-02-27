@@ -6,7 +6,7 @@ This will be an exercise in using function expressions and `for of` loops.
 
 Most times you iterate through an array, you don't need the index you're currently on, so `for of` loops are the simpler and nicer-looking choice.
 
-And every function should be declared with a function expression, because it prevents our functions being reassignable, preventing many a potential bug.
+And every function should be declared with a function expression, because it keeps our functions from being reassigned, preventing many a potential bug.
 
 Together, they make a dynamic duo, serving up simpler and safer syntax for solution-slingers!
 

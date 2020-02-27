@@ -24,6 +24,44 @@ const countSpaces = function(sentence) {
   return count;
 }
 
+const countTrues = function(bools) {
+  let count = 0;
+
+  for (const bool of bools) {
+    if (bool === true) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+
+const makeFriendly = function(paragraph) {
+  let friendly = '';
+
+  for (const letter of paragraph) {
+    if (letter === '.') {
+      friendly += '!';
+    } else {
+      friendly += letter;
+    }
+  }
+
+  return friendly;
+}
+
+const cubeAll = function(nums) {
+  let cubes = [];
+
+  for (const num of nums) {
+    cubes.push(num ** 3);
+  }
+
+  return cubes;
+}
+
+
 
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
@@ -43,12 +81,12 @@ if (typeof countTrues === 'undefined') {
   countTrues = undefined;
 }
 
-if (typeof cubeAll === 'undefined') {
-  cubeAll = undefined;
-}
-
 if (typeof makeFriendly === 'undefined') {
   makeFriendly = undefined;
+}
+
+if (typeof cubeAll === 'undefined') {
+  cubeAll = undefined;
 }
 
 if (typeof addNoises === 'undefined') {
@@ -120,5 +158,69 @@ describe(`countSpaces`, () => {
 
   it(`isn't reassignable`, () => {
     expect(() => countSpaces = 500).toThrow();
+  })
+})
+
+describe(`countTrues`, () => {
+  it(`counts all the trues in a true-only array`, () => {
+    const bools1 = [true, true, true];
+    const bools2 = [true, true, true, true, true];
+
+    expect(countTrues(bools1)).toBe(3);
+    expect(countTrues(bools2)).toBe(5);
+  })
+
+  it(`counts all the trues in an array of assorted booleans`, () => {
+    const bools1 = [true, false, true, false];
+    const bools2 = [true, false, false, true, true, false, false, true];
+
+    expect(countTrues(bools1)).toBe(2);
+    expect(countTrues(bools2)).toBe(4);
+  })
+
+  it(`doesn't confuse truthy values with true values`, () => {
+    const values1 = [true, 'hello', 3, true, []]
+
+    expect(countTrues(values1)).toBe(2);
+  })
+
+  it(`doesn't confuse the string 'true' with the boolean true`, () => {
+    const values1 = [true, 'true', 'true', true, 'true'];
+    const values2 = [true, 'true', 'true', true, true, 'true', 'true', true];
+
+    expect(countTrues(values1)).toBe(2);
+    expect(countTrues(values2)).toBe(4);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => countTrues = 500).toThrow();
+  })
+})
+
+describe('makeFriendly', () => {
+  it(`given a paragraph, returns a paragraph where each sentence ends with an exclamation point instead of the period it held before.`, () => {
+    const paragraph1 = `Do you see the story. Do you see anything. It seems to me I am trying to tell you a dream.`;
+    const paragraph2 = `Like a running blaze on a plain, like a flash of lightning in the clouds. We live in the flicker.`;
+      const paragraph3 = `What is that feeling when you’re driving away from people and they recede on the plain till you see their specks dispersing. It’s the too-huge world vaulting us, and it’s good-bye. But we lean forward to the next crazy venture beneath the skies. Nothing behind me, everything ahead of me, as is ever so on the road.`;
+
+    const friendly1 = `Do you see the story! Do you see anything! It seems to me I am trying to tell you a dream!`;
+    const friendly2 = `Like a running blaze on a plain, like a flash of lightning in the clouds! We live in the flicker!`;
+    const friendly3 = `What is that feeling when you’re driving away from people and they recede on the plain till you see their specks dispersing! It’s the too-huge world vaulting us, and it’s good-bye! But we lean forward to the next crazy venture beneath the skies! Nothing behind me, everything ahead of me, as is ever so on the road!`;
+
+    expect(makeFriendly(paragraph1)).toEqual(friendly1);
+    expect(makeFriendly(paragraph2)).toEqual(friendly2);
+    expect(makeFriendly(paragraph3)).toEqual(friendly3);
+  })
+})
+
+describe('cubeAll', () => {
+  it(`given an array of numbers, returns an array where each number has been cubed`, () => {
+    const nums1 = [3, 2, 5];
+    const cubes1 = [27, 8, 125];
+    const nums2 = [1, 10, -2];
+    const cubes2 = [1, 1000, -8];
+
+    expect(cubeAll(nums1)).toEqual(cubes1);
+    expect(cubeAll(nums2)).toEqual(cubes2);
   })
 })

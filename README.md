@@ -35,13 +35,13 @@ That one got away from me. Sorry.
 * `addAll` - given an array of numbers, returns the sum of all numbers added together.
 * `countSpaces` - given a string, returns the number of characters that are spaces.
 * `countTrues` - given an array of booleans, returns the number of `true` values.
+* `makeFriendly` - given a paragraph, returns a paragraph where each sentence ends with an exclamation point instead of the period it held before.
 
 
 ##### Maps
 
 * `cubeAll` - given an array of numbers, returns an array where each number has been cubed (a.k.a. raised to the third power).
 * `addNoises` - given an array of strings, returns an array where each string has appended to it that animal's noise. See tests for examples!
-* `makeFriendly` - given an array of paragraphs, returns an array where, for each paragraph, every second sentence ends with an exclamation point instead of the punctuation mark it held before.
 
 
 ##### Filters

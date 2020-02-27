@@ -2,9 +2,9 @@
 
 ### Introduction
 
-This will be an exercise in using function expressions and `for of` loops. Most times you'll iterate through an array you won't need the index you're currently on--including each of the challenges below.
+This will be an exercise in using function expressions and `for of` loops. Most times you iterate through an array, you don't need the index you're currently on--and that's true of each of the challenges below.
 
-You COULD use a `for` loop, but don't waste yo own time!
+Now, you COULD use a standard `for` loop... but who has time for that!
 
 
 ### Setup

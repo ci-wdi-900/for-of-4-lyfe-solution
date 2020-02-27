@@ -8,7 +8,7 @@ Most times you iterate through an array, you don't need the index you're current
 
 And every function should be declared with a function expression, because it prevents our functions being reassignable, preventing many a potential bug.
 
-Together, they make a dynamic duo serving up simpler and safer syntax for solution-slingers!
+Together, they make a dynamic duo, serving up simpler and safer syntax for solution-slingers!
 
 That one got away from me. Sorry!
 

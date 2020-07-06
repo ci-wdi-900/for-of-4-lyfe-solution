@@ -233,6 +233,10 @@ describe('makeFriendly', () => {
     expect(makeFriendly(paragraph2)).toEqual(friendly2);
     expect(makeFriendly(paragraph3)).toEqual(friendly3);
   })
+
+  it(`isn't reassignable`, () => {
+    expect(() => makeFriendly = 500).toThrow();
+  })
 })
 
 describe('cubeAll', () => {
@@ -244,6 +248,10 @@ describe('cubeAll', () => {
 
     expect(cubeAll(nums1)).toEqual(cubes1);
     expect(cubeAll(nums2)).toEqual(cubes2);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => cubeAll = 500).toThrow();
   })
 })
 
@@ -272,5 +280,9 @@ describe('addNoises', () => {
 
     expect(addNoises(animals1)).toEqual(withNoises1);
     expect(addNoises(animals2)).toEqual(withNoises2);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => addNoises = 500).toThrow();
   })
 })

@@ -133,19 +133,6 @@ describe('addAll', () => {
     expect(addAll(nums2)).toBe(-854);
   })
 
-  it(`doesn't modify the original array`, () => {
-    const nums1 = [5, 3];
-    const nums2 = [11, 8];
-    const original1 = [5, 3];
-    const original2 = [11, 8];
-
-    addAll(nums1);
-    addAll(nums2);
-
-    expect(nums1).toEqual(original1);
-    expect(nums2).toEqual(original2);
-  })
-
   it(`isn't reassignable`, () => {
     expect(() => addAll = 500).toThrow();
   })

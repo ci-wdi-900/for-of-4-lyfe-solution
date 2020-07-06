@@ -93,6 +93,31 @@ const addNoises = function(animals) {
   return animalsWithNoises;
 }
 
+// uses switch statement
+const addNoisesAlt = function(animals) {
+  const animalsWithNoises = [];
+  for (const animal of animals) {
+    switch(animal) {
+      case 'Fido':
+      case 'Rolph':
+      case 'Maisie':
+        animalsWithNoises.push(`${animal} says "Woof!"`);
+        break;
+
+      case 'Garfield':
+      case 'Heathcliff':
+        animalsWithNoises.push(`${animal} says "Meow!"`);
+        break;
+
+      case 'Barnie':
+      case 'Sharp Tooth':
+        animalsWithNoises.push(`${animal} says "ROWR."`);
+        break;
+    }
+  }
+
+  return animalsWithNoises;
+}
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/

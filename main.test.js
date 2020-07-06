@@ -237,6 +237,19 @@ describe('cubeAll', () => {
     expect(cubeAll(nums2)).toEqual(cubes2);
   })
 
+  it(`doesn't modify the original array`, () => {
+    const nums1 = [3, 2, 5];
+    const nums2 = [1, 10, -2];
+    const originalNums1 = [3, 2, 5];
+    const originalNums2 = [1, 10, -2];
+
+    addNoises(nums1);
+    addNoises(nums2);
+
+    expect(nums1).toEqual(originalNums1);
+    expect(nums2).toEqual(originalNums2);
+  })
+
   it(`isn't reassignable`, () => {
     expect(() => cubeAll = 500).toThrow();
   })
@@ -267,6 +280,19 @@ describe('addNoises', () => {
 
     expect(addNoises(animals1)).toEqual(withNoises1);
     expect(addNoises(animals2)).toEqual(withNoises2);
+  })
+
+  it(`doesn't modify the original array`, () => {
+    const animals1 = ['Fido', 'Garfield', 'Sharp Tooth'];
+    const animals2 = ['Rolph', 'Maisie', 'Barnie', 'Heathcliff'];
+    const originalAnimals1 = ['Fido', 'Garfield', 'Sharp Tooth'];
+    const originalAnimals2 = ['Rolph', 'Maisie', 'Barnie', 'Heathcliff'];
+
+    addNoises(animals1);
+    addNoises(animals2);
+
+    expect(animals1).toEqual(originalAnimals1);
+    expect(animals2).toEqual(originalAnimals2);
   })
 
   it(`isn't reassignable`, () => {

@@ -243,8 +243,8 @@ describe('cubeAll', () => {
     const originalNums1 = [3, 2, 5];
     const originalNums2 = [1, 10, -2];
 
-    addNoises(nums1);
-    addNoises(nums2);
+    cubeAll(nums1);
+    cubeAll(nums2);
 
     expect(nums1).toEqual(originalNums1);
     expect(nums2).toEqual(originalNums2);

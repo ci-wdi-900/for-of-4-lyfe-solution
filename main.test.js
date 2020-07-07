@@ -61,7 +61,26 @@ const cubeAll = function(nums) {
   return cubes;
 }
 
+// Uses `if` statements.
+// Note that you don't technically need the last `if` to pass these tests.
+// It just feels wrong logically to say, "It's not a dog or a cat, so it's a dinosaur."
 const addNoises = function(animals) {
+  const animalsWithNoises = [];
+
+  for (const animal of animals) {
+    if (animal === 'Fido' || animal === 'Rolph' || animal === 'Maisie') {
+      animalsWithNoises.push(`${animal} says "Woof!"`);
+    } else if (animal === 'Garfield' || animal === 'Heathcliff') {
+      animalsWithNoises.push(`${animal} says "Meow!"`);
+    } else if (animal === 'Barnie' || animal === 'Sharp Tooth') {
+      animalsWithNoises.push(`${animal} says "ROWR."`);
+    }
+  }
+
+  return animalsWithNoises;
+}
+
+const addNoisesAlt1 = function(animals) {
   const animalsWithNoises = [];
 
   const dogs = [
@@ -94,7 +113,7 @@ const addNoises = function(animals) {
 }
 
 // uses switch statement
-const addNoisesAlt = function(animals) {
+const addNoisesAlt2 = function(animals) {
   const animalsWithNoises = [];
   for (const animal of animals) {
     switch(animal) {

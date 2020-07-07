@@ -6,7 +6,7 @@ const addAll = function(nums) {
   let result = 0;
 
   for (const num of nums) {
-    result += num;
+    result = result + num;
   }
 
   return result;
@@ -17,7 +17,7 @@ const countSpaces = function(sentence) {
 
   for (const char of sentence) {
     if (char === ' ') {
-      count++;
+      count = count + 1;
     }
   }
 
@@ -29,7 +29,7 @@ const countTrues = function(bools) {
 
   for (const bool of bools) {
     if (bool === true) {
-      count++;
+      count = count + 1;
     }
   }
 
@@ -42,9 +42,9 @@ const makeFriendly = function(paragraph) {
 
   for (const letter of paragraph) {
     if (letter === '.') {
-      friendly += '!';
+      friendly = friendly + '!';
     } else {
-      friendly += letter;
+      friendly = friendly + letter;
     }
   }
 

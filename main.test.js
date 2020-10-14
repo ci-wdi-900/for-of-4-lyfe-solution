@@ -69,18 +69,18 @@ const addNoises = function(animals) {
 
   for (const animal of animals) {
     if (animal === 'Fido' || animal === 'Rolph' || animal === 'Maisie') {
-      animalsWithNoises.push(`${animal} says "Woof!"`);
+      animalsWithNoises.push(animal + ' says "Woof!"');
     } else if (animal === 'Garfield' || animal === 'Heathcliff') {
-      animalsWithNoises.push(`${animal} says "Meow!"`);
+      animalsWithNoises.push(animal + ' says "Meow!"');
     } else if (animal === 'Barnie' || animal === 'Sharp Tooth') {
-      animalsWithNoises.push(`${animal} says "ROWR."`);
+      animalsWithNoises.push(animal + ' says "ROWR."');
     }
   }
 
   return animalsWithNoises;
 }
 
-const addNoisesAlt1 = function(animals) {
+const addNoisesAlt = function(animals) {
   const animalsWithNoises = [];
 
   const dogs = [
@@ -101,42 +101,43 @@ const addNoisesAlt1 = function(animals) {
 
   for (const animal of animals) {
     if (dogs.includes(animal)) {
-      animalsWithNoises.push(`${animal} says "Woof!"`);
+      animalsWithNoises.push(animal + ' says "Woof!"');
     } else if (cats.includes(animal)) {
-      animalsWithNoises.push(`${animal} says "Meow!"`);
+      animalsWithNoises.push(animal + ' says "Meow!"');
     } else if (dinos.includes(animal)) {
-      animalsWithNoises.push(`${animal} says "ROWR."`);
+      animalsWithNoises.push(animal + ' says "ROWR."');
     }
   }
 
   return animalsWithNoises;
 }
 
-// uses switch statement
-const addNoisesAlt2 = function(animals) {
-  const animalsWithNoises = [];
-  for (const animal of animals) {
-    switch(animal) {
-      case 'Fido':
-      case 'Rolph':
-      case 'Maisie':
-        animalsWithNoises.push(`${animal} says "Woof!"`);
-        break;
+const womenOnly = function(people) {
+  const result = [];
 
-      case 'Garfield':
-      case 'Heathcliff':
-        animalsWithNoises.push(`${animal} says "Meow!"`);
-        break;
-
-      case 'Barnie':
-      case 'Sharp Tooth':
-        animalsWithNoises.push(`${animal} says "ROWR."`);
-        break;
+  for (const person of people) {
+    if (person.endsWith('F')) {
+      result.push(person);
     }
   }
 
-  return animalsWithNoises;
+  return result;
 }
+
+const integersOnly = function(nums) {
+  const result = [];
+
+  for (const num of nums) {
+    if (num % 1 === 0) {
+      result.push(num);
+    }
+  }
+
+  return result;
+}
+
+
+
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
@@ -341,5 +342,108 @@ describe('addNoises', () => {
 
   it(`isn't reassignable`, () => {
     expect(() => addNoises = 500).toThrow();
+  })
+})
+
+describe('womenOnly', () => {
+  it(`returns an array of only those strings in the given array where the last character is "F"`, () => {
+    const people1 = [
+      'Colin - M',
+      'Mesuara - F',
+      'Ginny - F',
+      'Anthony - M',
+    ]
+
+    const answer1 = [
+      'Mesuara - F',
+      'Ginny - F',
+    ]
+
+    const people2 = [
+      'Ted - M',
+      'Melissa - F',
+      'Biff - M',
+      'Spiffs - F',
+    ]
+
+    const answer2 = [
+      'Melissa - F',
+      'Spiffs - F',
+    ]
+
+    expect(womenOnly(people1)).toEqual(answer1);
+    expect(womenOnly(people2)).toEqual(answer2);
+  })
+
+  it(`doesn't modify the original array`, () => {
+    const originalPeople1 = [
+      'Colin - M',
+      'Mesuara - F',
+      'Ginny - F',
+      'Anthony - M',
+    ]
+
+    const people1 = [
+      'Colin - M',
+      'Mesuara - F',
+      'Ginny - F',
+      'Anthony - M',
+    ]
+
+    const originalPeople2 = [
+      'Ted - M',
+      'Melissa - F',
+      'Biff - M',
+      'Spiffs - F',
+    ]
+
+    const people2 = [
+      'Ted - M',
+      'Melissa - F',
+      'Biff - M',
+      'Spiffs - F',
+    ]
+
+    womenOnly(people1)
+    womenOnly(people2)
+
+    expect(people1).toEqual(originalPeople1);
+    expect(people2).toEqual(originalPeople2);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => womenOnly = 500).toThrow();
+  })
+})
+
+describe('integersOnly', () => {
+  it(`returns an array of only those numbers in the given array where the number is an integer`, () => {
+    const nums1 = [5, -5, 0.5]
+    const answer1 = [5, -5]
+    const nums2 = [0.9, 8, -100, 0.3];
+    const answer2 = [8, -100];
+
+    expect(integersOnly(nums1)).toEqual(answer1);
+    expect(integersOnly(nums2)).toEqual(answer2);
+  })
+
+  it(`doesn't modify the original array`, () => {
+    const originalNums1 = [5, 10, 3]
+
+    const nums1 = [5, 10, 3]
+
+    const originalNums2 = [8, 10, 24]
+
+    const nums2 = [8, 10, 24]
+
+    integersOnly(nums1)
+    integersOnly(nums2)
+
+    expect(nums1).toEqual(originalNums1);
+    expect(nums2).toEqual(originalNums2);
+  })
+
+  it(`isn't reassignable`, () => {
+    expect(() => integersOnly = 500).toThrow();
   })
 })

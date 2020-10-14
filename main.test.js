@@ -116,6 +116,18 @@ const womenOnly = function(people) {
   const result = [];
 
   for (const person of people) {
+    if (person[person.length - 1] === 'F') {
+      result.push(person);
+    }
+  }
+
+  return result;
+}
+
+const womenOnlyAlt = function(people) {
+  const result = [];
+
+  for (const person of people) {
     if (person.endsWith('F')) {
       result.push(person);
     }
